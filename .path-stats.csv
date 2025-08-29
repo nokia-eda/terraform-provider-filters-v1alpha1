@@ -1,0 +1,26 @@
+Path,Method,Schema,Model Name,Supported,Datasource,Resource
+/apps/filters.eda.nokia.com,GET,AppGroup,app_group,true,true,false
+/apps/filters.eda.nokia.com/v1alpha1,GET,ResourceList,resource_list,true,true,false
+/apps/filters.eda.nokia.com/v1alpha1/_ui/{pathname},GET,UIResult,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/controlplanefilters,GET,com.nokia.eda.filters.v1alpha1.ControlPlaneFilterList,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/filters,GET,com.nokia.eda.filters.v1alpha1.FilterList,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters,DELETE,com.nokia.eda.filters.v1alpha1.ControlPlaneFilterList,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters,GET,com.nokia.eda.filters.v1alpha1.ControlPlaneFilterList,control_plane_filter_list,true,true,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters,POST,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,control_plane_filter,true,false,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/_deleted,GET,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter_DeletedResources,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},DELETE,Status,control_plane_filter,true,false,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},GET,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,control_plane_filter,true,true,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PATCH,Patch,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PUT,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,control_plane_filter,true,false,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_revs,GET,ResourceHistory,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_topology,GET,ResourceTopology,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters,DELETE,com.nokia.eda.filters.v1alpha1.FilterList,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters,GET,com.nokia.eda.filters.v1alpha1.FilterList,filter_list,true,true,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters,POST,com.nokia.eda.filters.v1alpha1.Filter,filter,true,false,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/_deleted,GET,com.nokia.eda.filters.v1alpha1.Filter_DeletedResources,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},DELETE,Status,filter,true,false,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},GET,com.nokia.eda.filters.v1alpha1.Filter,filter,true,true,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PATCH,Patch,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PUT,com.nokia.eda.filters.v1alpha1.Filter,filter,true,false,true
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_revs,GET,ResourceHistory,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_topology,GET,ResourceTopology,,false,false,false
