@@ -23,7 +23,7 @@ description: |-
 
 - `fields` (String) a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched.
 - `filter` (String) an EQL "where" expression that will be used to filter the set of resources returned.
-- `labelselector` (String) a label selector string to filter the results based on CR labels
+- `label_selector` (String) a label selector string to filter the results based on CR labels
 
 ### Read-Only
 
@@ -109,18 +109,18 @@ Optional:
 
 - `action` (String) An action to take, either 'Accept','Drop', or 'RateLimit'.
 - `destination_mac` (String) Match an Ethernet frame if its destination MAC address logically anded with the mask equals this MAC address.
-- `destination_macmask` (String) Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address.
+- `destination_mac_mask` (String) Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address.
 - `ethertype` (String) An Ethernet frame matches this condition if its ethertype value (after 802.1Q VLAN tags) matches the specified value.
 - `log` (Boolean) Log the matches for this entry.
-- `outer_vlanidoperator` (String) Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals.
-- `outer_vlanidrange` (String) Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200
-- `outer_vlanidvalue` (String) Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames.
-- `rate_limit_1` (Attributes) Rate limit to apply when the action is 'RateLimit'. (see [below for nested schema](#nestedatt--items--spec--entries--mac_entry--rate_limit_1))
+- `outer_vlan_id_operator` (String) Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals.
+- `outer_vlan_id_range` (String) Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200
+- `outer_vlan_id_value` (String) Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames.
+- `rate_limit` (Attributes) Rate limit to apply when the action is 'RateLimit'. (see [below for nested schema](#nestedatt--items--spec--entries--mac_entry--rate_limit))
 - `source_mac` (String) Match an Ethernet frame if its source MAC address logically anded with the mask equals this MAC address.
-- `source_macmask` (String) Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address.
+- `source_mac_mask` (String) Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address.
 
-<a id="nestedatt--items--spec--entries--mac_entry--rate_limit_1"></a>
-### Nested Schema for `items.spec.entries.mac_entry.rate_limit_1`
+<a id="nestedatt--items--spec--entries--mac_entry--rate_limit"></a>
+### Nested Schema for `items.spec.entries.mac_entry.rate_limit`
 
 Optional:
 

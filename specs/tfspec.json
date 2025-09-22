@@ -368,7 +368,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "destination_macmask",
+                                                                "name": "destination_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address."
@@ -389,21 +389,21 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidoperator",
+                                                                "name": "outer_vlan_id_operator",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals."
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidrange",
+                                                                "name": "outer_vlan_id_range",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200"
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidvalue",
+                                                                "name": "outer_vlan_id_value",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames."
@@ -454,7 +454,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "source_macmask",
+                                                                "name": "source_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address."
@@ -535,7 +535,7 @@
                         }
                     },
                     {
-                        "name": "labelselector",
+                        "name": "label_selector",
                         "string": {
                             "computed_optional_required": "computed_optional",
                             "description": "a label selector string to filter the results based on CR labels"
@@ -836,7 +836,7 @@
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "destination_macmask",
+                                                                                "name": "destination_mac_mask",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address."
@@ -857,21 +857,21 @@
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "outer_vlanidoperator",
+                                                                                "name": "outer_vlan_id_operator",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals."
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "outer_vlanidrange",
+                                                                                "name": "outer_vlan_id_range",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200"
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "outer_vlanidvalue",
+                                                                                "name": "outer_vlan_id_value",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames."
@@ -922,7 +922,7 @@
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "source_macmask",
+                                                                                "name": "source_mac_mask",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address."
@@ -1295,7 +1295,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "destination_macmask",
+                                                                "name": "destination_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address."
@@ -1316,21 +1316,21 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidoperator",
+                                                                "name": "outer_vlan_id_operator",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals."
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidrange",
+                                                                "name": "outer_vlan_id_range",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200"
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidvalue",
+                                                                "name": "outer_vlan_id_value",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames."
@@ -1381,7 +1381,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "source_macmask",
+                                                                "name": "source_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address."
@@ -1442,7 +1442,7 @@
                         }
                     },
                     {
-                        "name": "labelselector",
+                        "name": "label_selector",
                         "string": {
                             "computed_optional_required": "computed_optional",
                             "description": "a label selector string to filter the results based on CR labels"
@@ -1743,7 +1743,7 @@
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "destination_macmask",
+                                                                                "name": "destination_mac_mask",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address."
@@ -1764,21 +1764,21 @@
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "outer_vlanidoperator",
+                                                                                "name": "outer_vlan_id_operator",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals."
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "outer_vlanidrange",
+                                                                                "name": "outer_vlan_id_range",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200"
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "outer_vlanidvalue",
+                                                                                "name": "outer_vlan_id_value",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames."
@@ -1829,7 +1829,7 @@
                                                                                 }
                                                                             },
                                                                             {
-                                                                                "name": "source_macmask",
+                                                                                "name": "source_mac_mask",
                                                                                 "string": {
                                                                                     "computed_optional_required": "optional",
                                                                                     "description": "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address."
@@ -2472,7 +2472,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "destination_macmask",
+                                                                "name": "destination_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address."
@@ -2505,7 +2505,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidoperator",
+                                                                "name": "outer_vlan_id_operator",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals.",
@@ -2524,14 +2524,14 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidrange",
+                                                                "name": "outer_vlan_id_range",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200"
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidvalue",
+                                                                "name": "outer_vlan_id_value",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames."
@@ -2600,7 +2600,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "source_macmask",
+                                                                "name": "source_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address."
@@ -3206,7 +3206,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "destination_macmask",
+                                                                "name": "destination_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address."
@@ -3239,7 +3239,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidoperator",
+                                                                "name": "outer_vlan_id_operator",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals.",
@@ -3258,14 +3258,14 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidrange",
+                                                                "name": "outer_vlan_id_range",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200"
                                                                 }
                                                             },
                                                             {
-                                                                "name": "outer_vlanidvalue",
+                                                                "name": "outer_vlan_id_value",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames."
@@ -3334,7 +3334,7 @@
                                                                 }
                                                             },
                                                             {
-                                                                "name": "source_macmask",
+                                                                "name": "source_mac_mask",
                                                                 "string": {
                                                                     "computed_optional_required": "optional",
                                                                     "description": "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address."

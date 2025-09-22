@@ -229,7 +229,7 @@ func ControlPlaneFilterDataSourceSchema(ctx context.Context) schema.Schema {
 											Description:         "Match an Ethernet frame if its destination MAC address logically anded with the mask equals this MAC address.",
 											MarkdownDescription: "Match an Ethernet frame if its destination MAC address logically anded with the mask equals this MAC address.",
 										},
-										"destination_macmask": schema.StringAttribute{
+										"destination_mac_mask": schema.StringAttribute{
 											Optional:            true,
 											Description:         "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address.",
 											MarkdownDescription: "Match an Ethernet frame if its destination MAC address logically anded with the mask equals the configured MAC address.",
@@ -244,22 +244,22 @@ func ControlPlaneFilterDataSourceSchema(ctx context.Context) schema.Schema {
 											Description:         "Log the matches for this entry.",
 											MarkdownDescription: "Log the matches for this entry.",
 										},
-										"outer_vlanidoperator": schema.StringAttribute{
+										"outer_vlan_id_operator": schema.StringAttribute{
 											Optional:            true,
 											Description:         "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals.",
 											MarkdownDescription: "Operator to use when matching OuterVlanIdValue, either Equals, GreaterOrEquals, or LessOrEquals.",
 										},
-										"outer_vlanidrange": schema.StringAttribute{
+										"outer_vlan_id_range": schema.StringAttribute{
 											Optional:            true,
 											Description:         "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200",
 											MarkdownDescription: "Range of Outer vlan IDs to match, in the format n-m, e.g. 100-200",
 										},
-										"outer_vlanidvalue": schema.StringAttribute{
+										"outer_vlan_id_value": schema.StringAttribute{
 											Optional:            true,
 											Description:         "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames.",
 											MarkdownDescription: "Ethernet frame matching criteria based on the outermost VLAN ID found before the subinterface-defining VLAN tag (if any) is removed. A value of 'none' will match only untagged frames.",
 										},
-										"rate_limit_1": schema.SingleNestedAttribute{
+										"rate_limit": schema.SingleNestedAttribute{
 											Attributes: map[string]schema.Attribute{
 												"burst_size": schema.Int64Attribute{
 													Optional:            true,
@@ -296,7 +296,7 @@ func ControlPlaneFilterDataSourceSchema(ctx context.Context) schema.Schema {
 											Description:         "Match an Ethernet frame if its source MAC address logically anded with the mask equals this MAC address.",
 											MarkdownDescription: "Match an Ethernet frame if its source MAC address logically anded with the mask equals this MAC address.",
 										},
-										"source_macmask": schema.StringAttribute{
+										"source_mac_mask": schema.StringAttribute{
 											Optional:            true,
 											Description:         "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address.",
 											MarkdownDescription: "Match an Ethernet frame if its source MAC address logically anded with the mask equals the configured MAC address.",
@@ -4111,22 +4111,22 @@ func (t MacEntryType) ValueFromObject(ctx context.Context, in basetypes.ObjectVa
 			fmt.Sprintf(`destination_mac expected to be basetypes.StringValue, was: %T`, destinationMacAttribute))
 	}
 
-	destinationMacmaskAttribute, ok := attributes["destination_macmask"]
+	destinationMacMaskAttribute, ok := attributes["destination_mac_mask"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`destination_macmask is missing from object`)
+			`destination_mac_mask is missing from object`)
 
 		return nil, diags
 	}
 
-	destinationMacmaskVal, ok := destinationMacmaskAttribute.(basetypes.StringValue)
+	destinationMacMaskVal, ok := destinationMacMaskAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`destination_macmask expected to be basetypes.StringValue, was: %T`, destinationMacmaskAttribute))
+			fmt.Sprintf(`destination_mac_mask expected to be basetypes.StringValue, was: %T`, destinationMacMaskAttribute))
 	}
 
 	ethertypeAttribute, ok := attributes["ethertype"]
@@ -4165,61 +4165,61 @@ func (t MacEntryType) ValueFromObject(ctx context.Context, in basetypes.ObjectVa
 			fmt.Sprintf(`log expected to be basetypes.BoolValue, was: %T`, logAttribute))
 	}
 
-	outerVlanidoperatorAttribute, ok := attributes["outer_vlanidoperator"]
+	outerVlanIdOperatorAttribute, ok := attributes["outer_vlan_id_operator"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`outer_vlanidoperator is missing from object`)
+			`outer_vlan_id_operator is missing from object`)
 
 		return nil, diags
 	}
 
-	outerVlanidoperatorVal, ok := outerVlanidoperatorAttribute.(basetypes.StringValue)
+	outerVlanIdOperatorVal, ok := outerVlanIdOperatorAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`outer_vlanidoperator expected to be basetypes.StringValue, was: %T`, outerVlanidoperatorAttribute))
+			fmt.Sprintf(`outer_vlan_id_operator expected to be basetypes.StringValue, was: %T`, outerVlanIdOperatorAttribute))
 	}
 
-	outerVlanidrangeAttribute, ok := attributes["outer_vlanidrange"]
+	outerVlanIdRangeAttribute, ok := attributes["outer_vlan_id_range"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`outer_vlanidrange is missing from object`)
+			`outer_vlan_id_range is missing from object`)
 
 		return nil, diags
 	}
 
-	outerVlanidrangeVal, ok := outerVlanidrangeAttribute.(basetypes.StringValue)
+	outerVlanIdRangeVal, ok := outerVlanIdRangeAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`outer_vlanidrange expected to be basetypes.StringValue, was: %T`, outerVlanidrangeAttribute))
+			fmt.Sprintf(`outer_vlan_id_range expected to be basetypes.StringValue, was: %T`, outerVlanIdRangeAttribute))
 	}
 
-	outerVlanidvalueAttribute, ok := attributes["outer_vlanidvalue"]
+	outerVlanIdValueAttribute, ok := attributes["outer_vlan_id_value"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`outer_vlanidvalue is missing from object`)
+			`outer_vlan_id_value is missing from object`)
 
 		return nil, diags
 	}
 
-	outerVlanidvalueVal, ok := outerVlanidvalueAttribute.(basetypes.StringValue)
+	outerVlanIdValueVal, ok := outerVlanIdValueAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`outer_vlanidvalue expected to be basetypes.StringValue, was: %T`, outerVlanidvalueAttribute))
+			fmt.Sprintf(`outer_vlan_id_value expected to be basetypes.StringValue, was: %T`, outerVlanIdValueAttribute))
 	}
 
-	rateLimit1Attribute, ok := attributes["rate_limit_1"]
+	rateLimit1Attribute, ok := attributes["rate_limit"]
 
 	if !ok {
 		diags.AddError(
@@ -4255,22 +4255,22 @@ func (t MacEntryType) ValueFromObject(ctx context.Context, in basetypes.ObjectVa
 			fmt.Sprintf(`source_mac expected to be basetypes.StringValue, was: %T`, sourceMacAttribute))
 	}
 
-	sourceMacmaskAttribute, ok := attributes["source_macmask"]
+	sourceMacMaskAttribute, ok := attributes["source_mac_mask"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`source_macmask is missing from object`)
+			`source_mac_mask is missing from object`)
 
 		return nil, diags
 	}
 
-	sourceMacmaskVal, ok := sourceMacmaskAttribute.(basetypes.StringValue)
+	sourceMacMaskVal, ok := sourceMacMaskAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`source_macmask expected to be basetypes.StringValue, was: %T`, sourceMacmaskAttribute))
+			fmt.Sprintf(`source_mac_mask expected to be basetypes.StringValue, was: %T`, sourceMacMaskAttribute))
 	}
 
 	if diags.HasError() {
@@ -4280,15 +4280,15 @@ func (t MacEntryType) ValueFromObject(ctx context.Context, in basetypes.ObjectVa
 	return MacEntryValue{
 		Action:              actionVal,
 		DestinationMac:      destinationMacVal,
-		DestinationMacmask:  destinationMacmaskVal,
+		DestinationMacMask:  destinationMacMaskVal,
 		Ethertype:           ethertypeVal,
 		Log:                 logVal,
-		OuterVlanidoperator: outerVlanidoperatorVal,
-		OuterVlanidrange:    outerVlanidrangeVal,
-		OuterVlanidvalue:    outerVlanidvalueVal,
+		OuterVlanIdOperator: outerVlanIdOperatorVal,
+		OuterVlanIdRange:    outerVlanIdRangeVal,
+		OuterVlanIdValue:    outerVlanIdValueVal,
 		RateLimit1:          rateLimit1Val,
 		SourceMac:           sourceMacVal,
-		SourceMacmask:       sourceMacmaskVal,
+		SourceMacMask:       sourceMacMaskVal,
 		state:               attr.ValueStateKnown,
 	}, diags
 }
@@ -4392,22 +4392,22 @@ func NewMacEntryValue(attributeTypes map[string]attr.Type, attributes map[string
 			fmt.Sprintf(`destination_mac expected to be basetypes.StringValue, was: %T`, destinationMacAttribute))
 	}
 
-	destinationMacmaskAttribute, ok := attributes["destination_macmask"]
+	destinationMacMaskAttribute, ok := attributes["destination_mac_mask"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`destination_macmask is missing from object`)
+			`destination_mac_mask is missing from object`)
 
 		return NewMacEntryValueUnknown(), diags
 	}
 
-	destinationMacmaskVal, ok := destinationMacmaskAttribute.(basetypes.StringValue)
+	destinationMacMaskVal, ok := destinationMacMaskAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`destination_macmask expected to be basetypes.StringValue, was: %T`, destinationMacmaskAttribute))
+			fmt.Sprintf(`destination_mac_mask expected to be basetypes.StringValue, was: %T`, destinationMacMaskAttribute))
 	}
 
 	ethertypeAttribute, ok := attributes["ethertype"]
@@ -4446,61 +4446,61 @@ func NewMacEntryValue(attributeTypes map[string]attr.Type, attributes map[string
 			fmt.Sprintf(`log expected to be basetypes.BoolValue, was: %T`, logAttribute))
 	}
 
-	outerVlanidoperatorAttribute, ok := attributes["outer_vlanidoperator"]
+	outerVlanIdOperatorAttribute, ok := attributes["outer_vlan_id_operator"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`outer_vlanidoperator is missing from object`)
+			`outer_vlan_id_operator is missing from object`)
 
 		return NewMacEntryValueUnknown(), diags
 	}
 
-	outerVlanidoperatorVal, ok := outerVlanidoperatorAttribute.(basetypes.StringValue)
+	outerVlanIdOperatorVal, ok := outerVlanIdOperatorAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`outer_vlanidoperator expected to be basetypes.StringValue, was: %T`, outerVlanidoperatorAttribute))
+			fmt.Sprintf(`outer_vlan_id_operator expected to be basetypes.StringValue, was: %T`, outerVlanIdOperatorAttribute))
 	}
 
-	outerVlanidrangeAttribute, ok := attributes["outer_vlanidrange"]
+	outerVlanIdRangeAttribute, ok := attributes["outer_vlan_id_range"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`outer_vlanidrange is missing from object`)
+			`outer_vlan_id_range is missing from object`)
 
 		return NewMacEntryValueUnknown(), diags
 	}
 
-	outerVlanidrangeVal, ok := outerVlanidrangeAttribute.(basetypes.StringValue)
+	outerVlanIdRangeVal, ok := outerVlanIdRangeAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`outer_vlanidrange expected to be basetypes.StringValue, was: %T`, outerVlanidrangeAttribute))
+			fmt.Sprintf(`outer_vlan_id_range expected to be basetypes.StringValue, was: %T`, outerVlanIdRangeAttribute))
 	}
 
-	outerVlanidvalueAttribute, ok := attributes["outer_vlanidvalue"]
+	outerVlanIdValueAttribute, ok := attributes["outer_vlan_id_value"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`outer_vlanidvalue is missing from object`)
+			`outer_vlan_id_value is missing from object`)
 
 		return NewMacEntryValueUnknown(), diags
 	}
 
-	outerVlanidvalueVal, ok := outerVlanidvalueAttribute.(basetypes.StringValue)
+	outerVlanIdValueVal, ok := outerVlanIdValueAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`outer_vlanidvalue expected to be basetypes.StringValue, was: %T`, outerVlanidvalueAttribute))
+			fmt.Sprintf(`outer_vlan_id_value expected to be basetypes.StringValue, was: %T`, outerVlanIdValueAttribute))
 	}
 
-	rateLimit1Attribute, ok := attributes["rate_limit_1"]
+	rateLimit1Attribute, ok := attributes["rate_limit"]
 
 	if !ok {
 		diags.AddError(
@@ -4536,22 +4536,22 @@ func NewMacEntryValue(attributeTypes map[string]attr.Type, attributes map[string
 			fmt.Sprintf(`source_mac expected to be basetypes.StringValue, was: %T`, sourceMacAttribute))
 	}
 
-	sourceMacmaskAttribute, ok := attributes["source_macmask"]
+	sourceMacMaskAttribute, ok := attributes["source_mac_mask"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`source_macmask is missing from object`)
+			`source_mac_mask is missing from object`)
 
 		return NewMacEntryValueUnknown(), diags
 	}
 
-	sourceMacmaskVal, ok := sourceMacmaskAttribute.(basetypes.StringValue)
+	sourceMacMaskVal, ok := sourceMacMaskAttribute.(basetypes.StringValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`source_macmask expected to be basetypes.StringValue, was: %T`, sourceMacmaskAttribute))
+			fmt.Sprintf(`source_mac_mask expected to be basetypes.StringValue, was: %T`, sourceMacMaskAttribute))
 	}
 
 	if diags.HasError() {
@@ -4561,15 +4561,15 @@ func NewMacEntryValue(attributeTypes map[string]attr.Type, attributes map[string
 	return MacEntryValue{
 		Action:              actionVal,
 		DestinationMac:      destinationMacVal,
-		DestinationMacmask:  destinationMacmaskVal,
+		DestinationMacMask:  destinationMacMaskVal,
 		Ethertype:           ethertypeVal,
 		Log:                 logVal,
-		OuterVlanidoperator: outerVlanidoperatorVal,
-		OuterVlanidrange:    outerVlanidrangeVal,
-		OuterVlanidvalue:    outerVlanidvalueVal,
+		OuterVlanIdOperator: outerVlanIdOperatorVal,
+		OuterVlanIdRange:    outerVlanIdRangeVal,
+		OuterVlanIdValue:    outerVlanIdValueVal,
 		RateLimit1:          rateLimit1Val,
 		SourceMac:           sourceMacVal,
-		SourceMacmask:       sourceMacmaskVal,
+		SourceMacMask:       sourceMacMaskVal,
 		state:               attr.ValueStateKnown,
 	}, diags
 }
@@ -4644,15 +4644,15 @@ var _ basetypes.ObjectValuable = MacEntryValue{}
 type MacEntryValue struct {
 	Action              basetypes.StringValue `tfsdk:"action"`
 	DestinationMac      basetypes.StringValue `tfsdk:"destination_mac"`
-	DestinationMacmask  basetypes.StringValue `tfsdk:"destination_macmask"`
+	DestinationMacMask  basetypes.StringValue `tfsdk:"destination_mac_mask"`
 	Ethertype           basetypes.StringValue `tfsdk:"ethertype"`
 	Log                 basetypes.BoolValue   `tfsdk:"log"`
-	OuterVlanidoperator basetypes.StringValue `tfsdk:"outer_vlanidoperator"`
-	OuterVlanidrange    basetypes.StringValue `tfsdk:"outer_vlanidrange"`
-	OuterVlanidvalue    basetypes.StringValue `tfsdk:"outer_vlanidvalue"`
-	RateLimit1          basetypes.ObjectValue `tfsdk:"rate_limit_1"`
+	OuterVlanIdOperator basetypes.StringValue `tfsdk:"outer_vlan_id_operator"`
+	OuterVlanIdRange    basetypes.StringValue `tfsdk:"outer_vlan_id_range"`
+	OuterVlanIdValue    basetypes.StringValue `tfsdk:"outer_vlan_id_value"`
+	RateLimit1          basetypes.ObjectValue `tfsdk:"rate_limit"`
 	SourceMac           basetypes.StringValue `tfsdk:"source_mac"`
-	SourceMacmask       basetypes.StringValue `tfsdk:"source_macmask"`
+	SourceMacMask       basetypes.StringValue `tfsdk:"source_mac_mask"`
 	state               attr.ValueState
 }
 
@@ -4664,17 +4664,17 @@ func (v MacEntryValue) ToTerraformValue(ctx context.Context) (tftypes.Value, err
 
 	attrTypes["action"] = basetypes.StringType{}.TerraformType(ctx)
 	attrTypes["destination_mac"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["destination_macmask"] = basetypes.StringType{}.TerraformType(ctx)
+	attrTypes["destination_mac_mask"] = basetypes.StringType{}.TerraformType(ctx)
 	attrTypes["ethertype"] = basetypes.StringType{}.TerraformType(ctx)
 	attrTypes["log"] = basetypes.BoolType{}.TerraformType(ctx)
-	attrTypes["outer_vlanidoperator"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["outer_vlanidrange"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["outer_vlanidvalue"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["rate_limit_1"] = basetypes.ObjectType{
+	attrTypes["outer_vlan_id_operator"] = basetypes.StringType{}.TerraformType(ctx)
+	attrTypes["outer_vlan_id_range"] = basetypes.StringType{}.TerraformType(ctx)
+	attrTypes["outer_vlan_id_value"] = basetypes.StringType{}.TerraformType(ctx)
+	attrTypes["rate_limit"] = basetypes.ObjectType{
 		AttrTypes: RateLimit1Value{}.AttributeTypes(ctx),
 	}.TerraformType(ctx)
 	attrTypes["source_mac"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["source_macmask"] = basetypes.StringType{}.TerraformType(ctx)
+	attrTypes["source_mac_mask"] = basetypes.StringType{}.TerraformType(ctx)
 
 	objectType := tftypes.Object{AttributeTypes: attrTypes}
 
@@ -4698,13 +4698,13 @@ func (v MacEntryValue) ToTerraformValue(ctx context.Context) (tftypes.Value, err
 
 		vals["destination_mac"] = val
 
-		val, err = v.DestinationMacmask.ToTerraformValue(ctx)
+		val, err = v.DestinationMacMask.ToTerraformValue(ctx)
 
 		if err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
 		}
 
-		vals["destination_macmask"] = val
+		vals["destination_mac_mask"] = val
 
 		val, err = v.Ethertype.ToTerraformValue(ctx)
 
@@ -4722,29 +4722,29 @@ func (v MacEntryValue) ToTerraformValue(ctx context.Context) (tftypes.Value, err
 
 		vals["log"] = val
 
-		val, err = v.OuterVlanidoperator.ToTerraformValue(ctx)
+		val, err = v.OuterVlanIdOperator.ToTerraformValue(ctx)
 
 		if err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
 		}
 
-		vals["outer_vlanidoperator"] = val
+		vals["outer_vlan_id_operator"] = val
 
-		val, err = v.OuterVlanidrange.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["outer_vlanidrange"] = val
-
-		val, err = v.OuterVlanidvalue.ToTerraformValue(ctx)
+		val, err = v.OuterVlanIdRange.ToTerraformValue(ctx)
 
 		if err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
 		}
 
-		vals["outer_vlanidvalue"] = val
+		vals["outer_vlan_id_range"] = val
+
+		val, err = v.OuterVlanIdValue.ToTerraformValue(ctx)
+
+		if err != nil {
+			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
+		}
+
+		vals["outer_vlan_id_value"] = val
 
 		val, err = v.RateLimit1.ToTerraformValue(ctx)
 
@@ -4752,7 +4752,7 @@ func (v MacEntryValue) ToTerraformValue(ctx context.Context) (tftypes.Value, err
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
 		}
 
-		vals["rate_limit_1"] = val
+		vals["rate_limit"] = val
 
 		val, err = v.SourceMac.ToTerraformValue(ctx)
 
@@ -4762,13 +4762,13 @@ func (v MacEntryValue) ToTerraformValue(ctx context.Context) (tftypes.Value, err
 
 		vals["source_mac"] = val
 
-		val, err = v.SourceMacmask.ToTerraformValue(ctx)
+		val, err = v.SourceMacMask.ToTerraformValue(ctx)
 
 		if err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
 		}
 
-		vals["source_macmask"] = val
+		vals["source_mac_mask"] = val
 
 		if err := tftypes.ValidateValue(objectType, vals); err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
@@ -4821,19 +4821,19 @@ func (v MacEntryValue) ToObjectValue(ctx context.Context) (basetypes.ObjectValue
 	}
 
 	attributeTypes := map[string]attr.Type{
-		"action":               basetypes.StringType{},
-		"destination_mac":      basetypes.StringType{},
-		"destination_macmask":  basetypes.StringType{},
-		"ethertype":            basetypes.StringType{},
-		"log":                  basetypes.BoolType{},
-		"outer_vlanidoperator": basetypes.StringType{},
-		"outer_vlanidrange":    basetypes.StringType{},
-		"outer_vlanidvalue":    basetypes.StringType{},
-		"rate_limit_1": basetypes.ObjectType{
+		"action":                 basetypes.StringType{},
+		"destination_mac":        basetypes.StringType{},
+		"destination_mac_mask":   basetypes.StringType{},
+		"ethertype":              basetypes.StringType{},
+		"log":                    basetypes.BoolType{},
+		"outer_vlan_id_operator": basetypes.StringType{},
+		"outer_vlan_id_range":    basetypes.StringType{},
+		"outer_vlan_id_value":    basetypes.StringType{},
+		"rate_limit": basetypes.ObjectType{
 			AttrTypes: RateLimit1Value{}.AttributeTypes(ctx),
 		},
-		"source_mac":     basetypes.StringType{},
-		"source_macmask": basetypes.StringType{},
+		"source_mac":      basetypes.StringType{},
+		"source_mac_mask": basetypes.StringType{},
 	}
 
 	if v.IsNull() {
@@ -4847,17 +4847,17 @@ func (v MacEntryValue) ToObjectValue(ctx context.Context) (basetypes.ObjectValue
 	objVal, diags := types.ObjectValue(
 		attributeTypes,
 		map[string]attr.Value{
-			"action":               v.Action,
-			"destination_mac":      v.DestinationMac,
-			"destination_macmask":  v.DestinationMacmask,
-			"ethertype":            v.Ethertype,
-			"log":                  v.Log,
-			"outer_vlanidoperator": v.OuterVlanidoperator,
-			"outer_vlanidrange":    v.OuterVlanidrange,
-			"outer_vlanidvalue":    v.OuterVlanidvalue,
-			"rate_limit_1":         rateLimit1,
-			"source_mac":           v.SourceMac,
-			"source_macmask":       v.SourceMacmask,
+			"action":                 v.Action,
+			"destination_mac":        v.DestinationMac,
+			"destination_mac_mask":   v.DestinationMacMask,
+			"ethertype":              v.Ethertype,
+			"log":                    v.Log,
+			"outer_vlan_id_operator": v.OuterVlanIdOperator,
+			"outer_vlan_id_range":    v.OuterVlanIdRange,
+			"outer_vlan_id_value":    v.OuterVlanIdValue,
+			"rate_limit":             rateLimit1,
+			"source_mac":             v.SourceMac,
+			"source_mac_mask":        v.SourceMacMask,
 		})
 
 	return objVal, diags
@@ -4886,7 +4886,7 @@ func (v MacEntryValue) Equal(o attr.Value) bool {
 		return false
 	}
 
-	if !v.DestinationMacmask.Equal(other.DestinationMacmask) {
+	if !v.DestinationMacMask.Equal(other.DestinationMacMask) {
 		return false
 	}
 
@@ -4898,15 +4898,15 @@ func (v MacEntryValue) Equal(o attr.Value) bool {
 		return false
 	}
 
-	if !v.OuterVlanidoperator.Equal(other.OuterVlanidoperator) {
+	if !v.OuterVlanIdOperator.Equal(other.OuterVlanIdOperator) {
 		return false
 	}
 
-	if !v.OuterVlanidrange.Equal(other.OuterVlanidrange) {
+	if !v.OuterVlanIdRange.Equal(other.OuterVlanIdRange) {
 		return false
 	}
 
-	if !v.OuterVlanidvalue.Equal(other.OuterVlanidvalue) {
+	if !v.OuterVlanIdValue.Equal(other.OuterVlanIdValue) {
 		return false
 	}
 
@@ -4918,7 +4918,7 @@ func (v MacEntryValue) Equal(o attr.Value) bool {
 		return false
 	}
 
-	if !v.SourceMacmask.Equal(other.SourceMacmask) {
+	if !v.SourceMacMask.Equal(other.SourceMacMask) {
 		return false
 	}
 
@@ -4935,19 +4935,19 @@ func (v MacEntryValue) Type(ctx context.Context) attr.Type {
 
 func (v MacEntryValue) AttributeTypes(ctx context.Context) map[string]attr.Type {
 	return map[string]attr.Type{
-		"action":               basetypes.StringType{},
-		"destination_mac":      basetypes.StringType{},
-		"destination_macmask":  basetypes.StringType{},
-		"ethertype":            basetypes.StringType{},
-		"log":                  basetypes.BoolType{},
-		"outer_vlanidoperator": basetypes.StringType{},
-		"outer_vlanidrange":    basetypes.StringType{},
-		"outer_vlanidvalue":    basetypes.StringType{},
-		"rate_limit_1": basetypes.ObjectType{
+		"action":                 basetypes.StringType{},
+		"destination_mac":        basetypes.StringType{},
+		"destination_mac_mask":   basetypes.StringType{},
+		"ethertype":              basetypes.StringType{},
+		"log":                    basetypes.BoolType{},
+		"outer_vlan_id_operator": basetypes.StringType{},
+		"outer_vlan_id_range":    basetypes.StringType{},
+		"outer_vlan_id_value":    basetypes.StringType{},
+		"rate_limit": basetypes.ObjectType{
 			AttrTypes: RateLimit1Value{}.AttributeTypes(ctx),
 		},
-		"source_mac":     basetypes.StringType{},
-		"source_macmask": basetypes.StringType{},
+		"source_mac":      basetypes.StringType{},
+		"source_mac_mask": basetypes.StringType{},
 	}
 }
 
