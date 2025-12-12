@@ -13,7 +13,9 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PATCH,Patch,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PUT,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,control_plane_filter,true,false,true
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_revs,GET,ResourceHistory,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_targets,GET,IntentTargets,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_topology,GET,ResourceTopology,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_topology,POST,K8STopologyRequest,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters,DELETE,com.nokia.eda.filters.v1alpha1.FilterList,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters,GET,com.nokia.eda.filters.v1alpha1.FilterList,filter_list,true,true,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters,POST,com.nokia.eda.filters.v1alpha1.Filter,filter,true,false,true
@@ -23,4 +25,6 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PATCH,Patch,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PUT,com.nokia.eda.filters.v1alpha1.Filter,filter,true,false,true
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_revs,GET,ResourceHistory,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_targets,GET,IntentTargets,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_topology,GET,ResourceTopology,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_topology,POST,K8STopologyRequest,,false,false,false
