@@ -19,14 +19,6 @@ k8_s_topology_request:
       path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_topology
       method: POST
 
-patch:
-  - update:
-      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
-      method: PATCH
-  - update:
-      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
-      method: PATCH
-
 resource_history:
   - read:
       path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_revs
@@ -71,6 +63,9 @@ com.nokia.eda.filters.v1alpha1.control_plane_filter:
   - update:
       path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
       method: PUT
+  - update:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
+      method: PATCH
 
 com.nokia.eda.filters.v1alpha1.control_plane_filter_list:
   - read:
@@ -98,6 +93,9 @@ com.nokia.eda.filters.v1alpha1.filter:
   - update:
       path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
       method: PUT
+  - update:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
+      method: PATCH
 
 com.nokia.eda.filters.v1alpha1.filter_list:
   - read:
@@ -117,8 +115,8 @@ com.nokia.eda.filters.v1alpha1.filter_deleted_resources:
 
 totalPaths: 17
 totalSchemas: 61
-usedSchemas: 15
-unusedSchemas: 46
+usedSchemas: 14
+unusedSchemas: 47
 unusedSchemaList:
   - AppGroupVersion
   - ErrorIndex
@@ -127,6 +125,7 @@ unusedSchemaList:
   - IntentTarget
   - K8SPatchOp
   - OverlayState
+  - Patch
   - Resource
   - ResourceHistoryEntry
   - StatusDetails

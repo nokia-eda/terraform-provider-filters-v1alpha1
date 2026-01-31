@@ -10,7 +10,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/_deleted,GET,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter_DeletedResources,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},DELETE,Status,control_plane_filter,true,false,true
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},GET,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,control_plane_filter,true,true,true
-/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PATCH,Patch,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PATCH,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name},PUT,com.nokia.eda.filters.v1alpha1.ControlPlaneFilter,control_plane_filter,true,false,true
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}/_targets,GET,IntentTargets,,false,false,false
@@ -22,7 +22,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/_deleted,GET,com.nokia.eda.filters.v1alpha1.Filter_DeletedResources,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},DELETE,Status,filter,true,false,true
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},GET,com.nokia.eda.filters.v1alpha1.Filter,filter,true,true,true
-/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PATCH,Patch,,false,false,false
+/apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PATCH,com.nokia.eda.filters.v1alpha1.Filter,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name},PUT,com.nokia.eda.filters.v1alpha1.Filter,filter,true,false,true
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}/_targets,GET,IntentTargets,,false,false,false
