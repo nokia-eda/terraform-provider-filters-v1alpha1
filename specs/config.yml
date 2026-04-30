@@ -1,0 +1,62 @@
+provider:
+  name: filters
+
+data_sources:
+  app_group:
+    read:
+      path: /apps/filters.eda.nokia.com
+      method: GET
+
+  control_plane_filter:
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
+      method: GET
+
+  control_plane_filter_list:
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters
+      method: GET
+
+  filter:
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
+      method: GET
+
+  filter_list:
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters
+      method: GET
+
+  resource_list:
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1
+      method: GET
+
+resources:
+  control_plane_filter:
+    create:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters
+      method: POST
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
+      method: GET
+    update:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
+      method: PUT
+    delete:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/controlplanefilters/{name}
+      method: DELETE
+
+  filter:
+    create:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters
+      method: POST
+    read:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
+      method: GET
+    update:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
+      method: PUT
+    delete:
+      path: /apps/filters.eda.nokia.com/v1alpha1/namespaces/{namespace}/filters/{name}
+      method: DELETE
